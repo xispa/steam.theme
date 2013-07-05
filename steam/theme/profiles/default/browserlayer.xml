@@ -1,0 +1,10 @@
+<layers>
+    
+    <!-- Enable the Steam Theme layer when installed -->
+    
+    <layer
+        name="steam.theme"
+        interface="steam.theme.interfaces.ISteamTheme"
+        />
+
+</layers>

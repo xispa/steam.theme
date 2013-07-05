@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules 
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    
+    <!-- Rules applying to standard Plone pages -->
+    <rules css:if-content="#visual-portal-wrapper">
+        
+        <theme href="index.html" />
+        
+        <!-- Copy standard header tags, including base (very important for
+             Plone default pages to work correctly), meta, title and
+             style sheets/scripts, in the order they appear in the content.
+         -->
+        <drop theme="/html/head/meta" />
+        <drop theme="/html/head/title" />
+        <drop theme="/html/head/base" />
+        <drop theme="/html/head/style" />
+        <drop theme="/html/head/script" />
+        <drop theme="/html/head/link" />
+        <drop theme="/html/head/comment()" />
+        
+        <drop css:theme="#header-slide" css:if-not-content="body.section-front-page"/>
+        <after css:theme-children="#site-description" content-children="/html/head/title"/>
+        
+        <after content="/html/head/meta" theme-children="/html/head" />
+        <after content="/html/head/title" theme-children="/html/head" />
+        
+        <after
+            content="/html/head/base | /html/head/style | /html/head/script | /html/head/link | /html/head/comment()"
+            theme-children="/html/head"
+            />
+
+        <!-- Copy over the id/class attributes on the body tag. This is important
+             for per-section styling -->
+        <copy attributes="class id dir" content="/html/body" theme="/html/body" />
+
+        <!-- Logo (link target) -->
+        <copy attributes="href" css:content="#portal-logo" css:theme="#logo" />
+        
+        
+               
+        <drop css:content="#portal-columns #portal-column-one dl.portletNavigationTree"/>
+        <after css:theme-children='#menutop'>       
+            <xsl:for-each css:select="ul.navTreeLevel0 > li.navTreeItem">
+                   <xsl:if test="count(a/span/text()) &lt; 1">
+                   <li class="{@class} level1">
+                        <a href="{div/a/@href}"><xsl:value-of css:select="div > a"/></a>  
+                   </li>
+                   </xsl:if>
+                   <xsl:if test="count(a/span/text()) &gt; 0">
+                   <li class="{@class} level1">
+                       <a href="{a/@href}"><xsl:value-of css:select="a > span"/></a>                            
+                       <xsl:if test="count(ul/text()) &gt; 0">
+                           <ul>
+                            <xsl:for-each css:select="ul.navTreeLevel1 > li.navTreeItem">
+                            <li class='level2'>
+                                <xsl:if test="count(a/span/text()) &gt; 0">
+	                               <a href="{a/@href}"><xsl:value-of css:select="a > span"/></a>
+	                            </xsl:if>
+	                            <xsl:if test="count(a/span/text()) &lt; 1">
+	                               <a href="{a/@href}"><xsl:value-of css:select="a"/></a>
+	                            </xsl:if>
+                            </li>
+                            </xsl:for-each>
+                           </ul>
+                       </xsl:if>
+                   </li>
+                   </xsl:if>
+            </xsl:for-each>
+            <xsl:for-each css:select="#portal-globalnav li">
+                <li class='level1'>
+                  <a href="{a/@href}"><xsl:value-of css:select="a"/></a>
+                </li>
+            </xsl:for-each>
+        </after> 
+        <replace css:content-children='#edit-bar' css:theme-children='#edit-bar' />
+        <drop css:content="#portal-global-nav"/>        
+        <drop css:content="#edit-bar"/>
+        
+        
+        <!-- Portal search box -->
+        <replace css:content='#portal-searchbox' css:theme='#portal-searchbox'></replace>
+        
+        <!-- Actions / Personal tools -->
+        <replace css:content="#portal-personaltools" css:theme="#portal-personaltools"></replace>
+
+        <!-- Site actions -->
+        <!-- replace css:content="#user-name" css:theme-children="#actions li.level1"/>
+        <after css:theme-children='#actions li.level1'>
+            <ul>
+            <xsl:for-each css:select="#portal-personaltools dd ul > li">
+                <li class="level2">
+                    <a href="{a/@href}"><xsl:value-of css:select="a" /></a>
+                </li>                        
+            </xsl:for-each>
+            </ul>
+        </after--> 
+        
+        <!-- replace css:content="#portal-personaltools dt.actionMenuHeader a" css:theme="#actions a#username" />
+        <replace css:content="#portal-personaltools dd.actionMenuContent ul li" css:theme-children="#actions ul.level2"/-->
+
+        <!-- User actions -->
+
+        <!-- The logged-in actions are a list... -->
+        <!-- after css:content="#portal-personaltools li" css:theme-children="#actions" /-->
+
+        <!-- ... but for anonymous users, it's a dl, so we build list elements
+             using XSL directives
+          -->
+        <after css:theme-children="#actions">
+            <xsl:for-each css:select="#anon-personalbar > a">
+                <li><xsl:copy-of css:select="a"/></li>
+            </xsl:for-each>
+        </after>
+
+        <!-- Global navigation -->
+        <!-- replace css:content='#portal-globalnav li' css:theme-children='#global-navigation' /-->
+        
+        
+
+        <!-- Breadcrumbs -->
+        <replace css:content-children='#portal-breadcrumbs' css:theme-children='#breadcrumbs' />
+
+        <!-- Document Content -->
+        <replace css:content="#content" css:theme="#document-content" />
+        
+        <!-- Edit bar -->
+        <before css:content="#edit-bar" css:theme="#document-content" />
+        
+        <!-- Status messages not inside #content -->
+        <drop css:content="#content .portalMessage"/>
+        <before css:content=".portalMessage" method="raw" css:theme="#document-content" />
+        
+        <!-- Drop navtree images -->
+        <drop css:content="dl#portletNavigationTree img" />
+
+        <!-- Columns -->
+        <replace css:content-children="#portal-column-one" css:theme-children="#column-one" />
+        <replace css:content-children="#portal-column-two" css:theme-children="#column-two" />
+
+        <!-- Footer -->
+        <replace css:content-children="#portal-footer-wrapper" css:theme-children="#footer"/>
+        <after css:content="#kss-spinner" theme-children="/html/body" />
+            
+    </rules>
+    
+</rules>
