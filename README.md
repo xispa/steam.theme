@@ -1,4 +1,4 @@
-bika-steam-theme
+steam.theme
 ================
 
 A diazo theme for Bika
