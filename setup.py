@@ -6,7 +6,7 @@ version = '1.0'
 setup(name='steam.theme',
       version=version,
       description="Steam theme for Bika LIMS",
-      long_description=open("README.txt").read() + "\n" +
+      long_description=open("README.md").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
