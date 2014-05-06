@@ -1,22 +1,42 @@
 /* STEAM THEME */
 @import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600);
 @import url(http://fonts.googleapis.com/css?family=Merriweather+Sans);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@CHARSET "UTF-8";
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url('fonts/opensans.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url('fonts/opensans-light.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url('fonts/opensans-semibold.woff') format('woff');
+}
+
 #header {}
 body {
-	background-color:#DCDCDC;
+    background-color:#DCDCDC;
 }
 #wrapper {
-	background-color:#fff;
+    background-color:#fff;
 }
 #menusubbar {
-	background-color: #EFEFEF;
+    background-color: #EFEFEF;
     border-bottom: 1px solid #DCDCDC;
     padding: 0 0 0 8px;
     height:32px;
 }
 #breadcrumbs {
-    
+
     color: #333333;
     font-family:'Open Sans', sans-serif, Helvetica, Arial;
     font-size: 0.7em;
@@ -29,10 +49,10 @@ body {
 #breadcrumbs a {
 }
 #actionsmenu {
-	float:right;
+    float:right;
 }
 a:hover {
-	color:#2b7bc1;
+    color:#2b7bc1;
 }
 /* Columns */
 #columns {clear: both;}
@@ -52,7 +72,7 @@ background: url('../images/slide_back.jpg') no-repeat left center transparent;
 height:350px;
 }
 #header-slide h1 {
-	opacity: 0.5;
+    opacity: 0.5;
   filter:  alpha(opacity=70);
   background-color:#333;
   color:#fff;
@@ -83,13 +103,13 @@ padding:10px 10px 10px 20px;
 #mainmenu ul li.level1.navTreeCurrentNode ul li.level2 a {color:#222222;}
 #mainmenu ul li.level1.navTreeCurrentNode ul li.level2 a:hover {}
 #mainmenu ul li.level1:hover {
-    -moz-transition: all 0.25s ease-out 0s; 
+    -moz-transition: all 0.25s ease-out 0s;
     -webkit-transition: all 0.25s ease-out 0s;
     -o-transition: all 0.25s ease-out 0s;
     transition: all 0.25s ease-out 0s;
     background-color:#666;
 }
-#mainmenu ul li.level1:hover a {	
+#mainmenu ul li.level1:hover a {
 }
 #mainmenu ul li.level1 ul {
     background-color:#efefef;
@@ -103,10 +123,10 @@ padding:10px 10px 10px 20px;
 #mainmenu ul li.level1 ul li.level2.last-item a{border-radius: 0px 0px 5px 5px;}
 #mainmenu ul .ui-corner-all {border:none}
 #mainmenu ul li.navTreeTopNode {
-	padding-left:10px;
-	padding-right:10px;
-	min-width:16px;
-	width:16px;
+    padding-left:10px;
+    padding-right:10px;
+    min-width:16px;
+    width:16px;
 }
 #mainmenu ul li.navTreeTopNode a {
     background: url('../images/home.png') no-repeat left center transparent;
@@ -117,49 +137,49 @@ padding:10px 10px 10px 20px;
     width:16px;
     padding: 7px 0 14px;
 }
-#mainmenu ul li.navTreeTopNode.navTreeCurrentNode a, 
+#mainmenu ul li.navTreeTopNode.navTreeCurrentNode a,
 #mainmenu ul li.navTreeTopNode:hover a {
     background: url('../images/home_hover.png') no-repeat left center transparent;
 }
 #edit-bar {
-	clear:both;
+    clear:both;
 }
 
 /* Inherited stuff */
 #content h1 {
-	font-family: 'Titillium web',Arial,Helvetica,Sans;
-	font-size:1.7em;
-	margin-bottom:5px;
-	padding-top:10px;
+    font-family: 'Titillium web',Arial,Helvetica,Sans;
+    font-size:1.7em;
+    margin-bottom:5px;
+    padding-top:10px;
 }
 #content h1 img {
-	vertical-align:top;
+    vertical-align:top;
 }
 #content h2 {
-	font-family: 'Titillium web',Arial,Helvetica,Sans;
+    font-family: 'Titillium web',Arial,Helvetica,Sans;
     font-size:1.4em;
     color:#333;
     margin-bottom:4px;
 }
 #content h3 {
-	font-family: 'Titillium web',Arial,Helvetica,Sans;
+    font-family: 'Titillium web',Arial,Helvetica,Sans;
     font-size: 1.2em;
     color:#333;
 }
 #content h3 span {
-	padding-left:8px;
+    padding-left:8px;
 }
 span.documentFirstHeading {
-	color: #333333;
+    color: #333333;
     padding-left: 8px;
     text-shadow: none;
 }
 #content h1 a {
-	font-size:0.6em;
+    font-size:0.6em;
 }
 .bika-listing-table thead {
-	background-color:#777;
-	background-image:none;
+    background-color:#777;
+    background-image:none;
 }
 #header #edit-bar {
     border: medium none !important;
@@ -168,62 +188,63 @@ span.documentFirstHeading {
     margin-top: -20px;
     padding-left: 25px;
     padding-top: 3px;
-    padding-right:40px;    
+    padding-right:40px;
     font-family:'Open Sans', sans-serif, Helvetica, Arial;
     font-size: 0.75em;
+    height: 26px;
 }
 #header #edit-bar ul {
-	
+
 }
 #header #edit-bar ul li {
-	
+
 }
 #header #edit-bar ul li a {
-	color:#444;
+    color:#444;
 }
 #footer {    background-color: #DCDCDC;
     border-top: 1px solid #CDCDCD;
     margin-top: 40px;
  }
 #footer div.cell {
-	float:none;
-	margin-left:0px;
-	width:100%;
-	left:0;
+    float:none;
+    margin-left:0px;
+    width:100%;
+    left:0;
 }
 #portal-footer {
-	margin:0px;
-	background-color:transparent;
+    margin:0px;
+    background-color:transparent;
 }
 #portal-colophon {
-	margin-bottom:0px;
+    margin-bottom:0px;
 }
 #portal-siteactions {
-	margin-top:-5px;
+    margin-top:-5px;
 }
 #portal-siteactions li a {
-	color:#333;
-	font-size:0.9em;
+    color:#333;
+    font-size:0.9em;
 }
 #portal-siteactions li a:hover {
-	color:#000;
+    color:#000;
 }
 #portal-colophon div.colophonWrapper {
-	padding-bottom:7px;
+    padding-bottom:7px;
 }
 img {
-	vertical-align:middle;
+    vertical-align:middle;
 }
 
 
 input[type="submit"] {
-	color: #fff;
-	cursor: pointer;
+    color: #fff;
+    cursor: pointer;
     font-family:'Open Sans', sans-serif, Helvetica, Arial;
    /* background: url("images/overlay-button.png") repeat-x scroll 0 0 #222222;*/
     border: medium none;
     border-radius: 5px 5px 5px 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);    
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     display: inline-block;
     line-height: 1;
     padding: 5px 10px 6px;
@@ -237,29 +258,29 @@ input[type="submit"] {
 }
 input[type="submit"]:hover {
     background-color:#205C90;
-    -moz-transition: all 0.25s ease-out 0s; 
+    -moz-transition: all 0.25s ease-out 0s;
 }
 div.formControls {
-	margin-left:0px;
+    margin-left:0px;
 }
 
 input.action_button {
-	box-shadow:0 0 0;
-	text-shadow: 0 0 0;
-	font-size: 1em;
+    box-shadow:0 0 0;
+    text-shadow: 0 0 0;
+    font-size: 1em;
     margin-right: 5px;
     padding:1px 4px;
     color: #555;
 }
 input.action_button:hover {
-	border:1px solid #000;
-	background-color:#dcdcdc !important;
-	-moz-transition: all 0.25s ease-out 0s; 
-	color: #333;
+    border:1px solid #000;
+    background-color:#dcdcdc !important;
+    -moz-transition: all 0.25s ease-out 0s;
+    color: #333;
 }
 
 #content .bika-listing-table thead tr {
-	border-bottom: 1px solid #AAAAAA;
+    border-bottom: 1px solid #AAAAAA;
 }
 #content .bika-listing-table thead tr td.listing-filter-row a {
     background-color: #EEEEEE;
@@ -276,13 +297,13 @@ input.action_button:hover {
     text-shadow: 0 0 0;
 }
 #content .bika-listing-table thead tr td.listing-filter-row a:link {
-	color: #555;
+    color: #555;
 }
 #content .bika-listing-table thead tr td.listing-filter-row a:link:hover {
     border:1px solid #333;
     color: #333 !important;
     background-color:#fff;
-    -moz-transition: all 0.25s ease-out 0s;     
+    -moz-transition: all 0.25s ease-out 0s;
 }
 #content .bika-listing-table thead tr td.listing-filter-row a.selected:link {
     border:1px solid #888 !important;
@@ -302,7 +323,7 @@ input.action_button:hover {
 input.button-default,
 input.button,
 input.button-disabled {
-    
+
 }
 
 #content div.attachments {
@@ -320,24 +341,24 @@ input.button-disabled {
     border:1px solid #AAA;*/
 }
 #content dl.collapsedBlockCollapsible {
-	/*border:1px solid red;*/
+    /*border:1px solid red;*/
 }
 
 #content dl.collapsedBlockCollapsible dt.collapsibleHeader{
-	/*background: url("../images/expand_16.png") no-repeat scroll 3px 1px #DCDCDC !important;
+    /*background: url("../images/expand_16.png") no-repeat scroll 3px 1px #DCDCDC !important;
     border: 1px solid #CDCDCD;
     border-radius: 5px 5px 0 0;
     padding: 3px 0 3px 20px !important;*/
 }
 #content dl.collapsedBlockCollapsible dt.collapsibleHeader:hover {
-	/*background-image: url("../images/expand_16_hover.png") !important;*/
+    /*background-image: url("../images/expand_16_hover.png") !important;*/
 }
 
 #content fieldset {
-	/*border-color:#205C90;
-	margin-top:15px;
-	*/
-	box-shadow: 0 1px 1px #CCCCCC;
+    /*border-color:#205C90;
+    margin-top:15px;
+    */
+    box-shadow: 0 1px 1px #CCCCCC;
     color: #333333;
     margin-top: 15px;
     background-color: #EFEFEF;
@@ -352,16 +373,16 @@ input.button-disabled {
 }
 
 #content fieldset legend {
-	font-size:1em;
-	font-weight:bold;
+    font-size:1em;
+    font-weight:bold;
 }
 
-#actionsmenu ul {	
+#actionsmenu ul {
 }
 #actionsmenu ul li ul {
 }
 #actionsmenu ul.actions li.level1 a.user-name {
-	
+
 }
 
 #menusubbar-right {
@@ -370,13 +391,13 @@ input.button-disabled {
 }
 
 #menusubbar-right div#portal-searchbox {
-	margin:0;
-	padding:0;
-	float:left;
+    margin:0;
+    padding:0;
+    float:left;
 }
 
 #menusubbar-right div#portal-searchbox input#searchGadget {
-	border: 1px solid #888888;
+    border: 1px solid #888888;
     padding: 1px 5px 2px;
     font-size: 0.9em;
 }
@@ -390,15 +411,15 @@ input.button-disabled {
 }
 
 #menusubbar-right dl#portal-personaltools {
-	margin-top: -4px;
+    margin-top: -4px;
 }
 
 #menusubbar-right #LSResult {
-	z-index: 3;
-	margin-top:-20px;
+    z-index: 3;
+    margin-top:-20px;
 }
 #menusubbar-right legend#livesearchLegend {
-	    border-radius: 5px 5px 0 0;
+        border-radius: 5px 5px 0 0;
     font-size: 0.9em;
     margin-bottom: 25px;
     margin-left: -1px;
@@ -406,14 +427,14 @@ input.button-disabled {
     padding-right: 10px;
 }
 #menusubbar-right div.LSIEFix {
-	 margin-top: -30px;
+     margin-top: -30px;
     padding-top: 0;
 }
 dl.portalMessage {
-	clear:none;
+    clear:none;
 }
 #columns:after {
-	    clear: both;
+        clear: both;
     content: " ";
     display: block;
     font-size: 0;
@@ -421,14 +442,20 @@ dl.portalMessage {
     visibility: hidden;
 }
 #footer #portal-footer {
-	background-color:transparent;
+    background-color:transparent;
 }
 #column-two div.managePortletsLink {
-	border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
     text-align: center;
 }
 
 div.managePortletsLink a {
-	display:block;
-	color: #555555;
+    display:block;
+    color: #555555;
+}
+#portal-alert {
+    background-color: #DCDCDC;
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-right: 0;
 }
